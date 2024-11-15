@@ -1,6 +1,6 @@
-package com.blog.gateway.config;
+package com.blog.api_gateway.config;
 
-import com.blog.gateway.filters.AuthenticationFilter;
+import com.blog.api_gateway.filters.AuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;

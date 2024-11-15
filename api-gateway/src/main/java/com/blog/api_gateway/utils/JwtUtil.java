@@ -1,4 +1,4 @@
-package com.blog.gateway.utils;
+package com.blog.api_gateway.utils;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;

@@ -1,4 +1,4 @@
-package com.blog.gateway.filters;
+package com.blog.api_gateway.filters;
 
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;

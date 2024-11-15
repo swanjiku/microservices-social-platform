@@ -1,4 +1,4 @@
-package com.blog.gateway.config;
+package com.blog.api_gateway.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

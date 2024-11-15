@@ -1,6 +1,6 @@
-package com.blog.gateway.filters;
+package com.blog.api_gateway.filters;
 
-import com.blog.gateway.utils.JwtUtil;
+import com.blog.api_gateway.utils.JwtUtil;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.security.SignatureException;
