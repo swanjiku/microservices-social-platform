@@ -42,18 +42,18 @@ Each service has a `Dockerfile` with the following structure:
 Example `Dockerfile` for a service:
 
 ```
-# Use an official OpenJDK runtime as a parent image
+# Use a base image that supports Java 17
 FROM openjdk:17-jdk-slim
 
-# Set the working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Copy the application's JAR file to the container
-COPY target/user-service.jar user-service.jar
+# Copy the jar file to the working directory
+COPY target/user-service-0.0.1-SNAPSHOT.jar user-service.jar
 
-# Expose the port the service runs on
+# Expose the port the application will run on
 EXPOSE 9001
 
-# Run the JAR file
+# Run the jar file
 ENTRYPOINT ["java", "-jar", "user-service.jar"]
 ```
