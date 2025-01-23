@@ -26,3 +26,7 @@ This platform follows a microservices architecture pattern, where each component
         |                   v                        v
    [JWT Authentication]  [Secure REST API]       [Inter-service Comm.]
 ```
+
+## Containerization with Docker
+
+To ensure seamless deployment and scaling, the services are containerized using Docker. Each service has its own Dockerfile that defines how to build and run the service in an isolated environment. Docker Compose is used to orchestrate the services for local development and testing.
