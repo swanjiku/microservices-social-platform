@@ -38,3 +38,22 @@ Each service has a `Dockerfile` with the following structure:
 2. **Copy Files**: Copies the compiled JAR file of the service into the container.
 3. **Expose Ports**: Exposes the port on which the service runs.
 4. **Command to Run the Service**: Executes the JAR file.
+
+Example `Dockerfile` for a service:
+
+```
+# Use an official OpenJDK runtime as a parent image
+FROM openjdk:17-jdk-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the application's JAR file to the container
+COPY target/user-service.jar user-service.jar
+
+# Expose the port the service runs on
+EXPOSE 9001
+
+# Run the JAR file
+ENTRYPOINT ["java", "-jar", "user-service.jar"]
+```
