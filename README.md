@@ -57,3 +57,76 @@ EXPOSE 9001
 # Run the jar file
 ENTRYPOINT ["java", "-jar", "user-service.jar"]
 ```
+
+### Docker Compose
+Docker Compose is used to define and run multi-container Docker applications. It links the services together and manages networking.
+
+Example `docker-compose.yml` file:
+
+```
+version: '3.8'
+
+services:
+  user-service:
+    build:
+      context: ./user-service
+    ports:
+      - "9001:9001"
+    networks:
+      - blog-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+
+  post-service:
+    build:
+      context: ./post-service
+    ports:
+      - "9002:9002"
+    networks:
+      - blog-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+
+  comment-service:
+    build:
+      context: ./comment-service
+    ports:
+      - "9003:9003"
+    networks:
+      - blog-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+
+  api-gateway:
+    build:
+      context: ./api-gateway
+    ports:
+      - "9000:9000"
+    networks:
+      - blog-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+
+networks:
+  blog-network:
+    driver: bridge
+```
+
+### How to Run
+1. Install Docker and Docker Compose on your machine.
+2. Clone this repository and navigate to its root directory.
+3. Build the services and run the containers using Docker Compose:
+
+```bash
+docker-compose up --build
+```
+4. Access each service using the exposed ports:
+- User Service: `http://localhost:9001`
+- Post Service: `http://localhost:9002`
+- Comment Service: `http://localhost:9003`
+  
+### Advantages of Containerization
+- **Consistency**: Containers ensure that the application runs the same way in all environments (development, testing, production).
+- **Scalability**: Each service can be scaled independently by running additional containers.
+- **Isolation**: Each service runs in its own container, avoiding dependency conflicts.
+- **Simplified Deployment**: Docker Compose simplifies managing multiple services during development and testing.
