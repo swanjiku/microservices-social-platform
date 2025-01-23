@@ -29,4 +29,12 @@ This platform follows a microservices architecture pattern, where each component
 
 ## Containerization with Docker
 
-To ensure seamless deployment and scaling, the services are containerized using Docker. Each service has its own Dockerfile that defines how to build and run the service in an isolated environment. Docker Compose is used to orchestrate the services for local development and testing.
+To ensure seamless deployment and scaling, the services are containerized using Docker. Each service has its own `Dockerfile` that defines how to build and run the service in an isolated environment. Docker Compose is used to orchestrate the services for local development and testing.
+
+### Docker Files
+Each service has a `Dockerfile` with the following structure:
+
+1. **Base Image**: Uses an official Java image as the base.
+2. **Copy Files**: Copies the compiled JAR file of the service into the container.
+3. **Expose Ports**: Exposes the port on which the service runs.
+4. **Command to Run the Service**: Executes the JAR file.
