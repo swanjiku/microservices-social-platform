@@ -1,4 +1,4 @@
-# Microservices Architecture
+# Microservices Social Platform
 
 ## Overview
 
